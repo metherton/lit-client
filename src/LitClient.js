@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
 import { openWcLogo } from './open-wc-logo.js';
 
+
 export class LitClient extends LitElement {
   static get properties() {
     return {
