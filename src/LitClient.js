@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
-import { openWcLogo } from './open-wc-logo.js';
-
+import '@material/mwc-drawer';
+import '@material/mwc-button';
 
 export class LitClient extends LitElement {
   static get properties() {
@@ -56,30 +56,10 @@ export class LitClient extends LitElement {
 
   render() {
     return html`
-      <main>
-        <div class="logo">${openWcLogo}</div>
-        <h1>My app</h1>
-
-        <p>Edit <code>src/LitClient.js</code> and save to reload.</p>
-        <a
-          class="app-link"
-          href="https://open-wc.org/developing/#code-examples"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Code examples
-        </a>
-      </main>
-
-      <p class="app-footer">
-        🚽 Made with love by
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/open-wc"
-          >open-wc</a
-        >.
-      </p>
-    `;
+        <div slot="appContent">
+          <main class="container">
+            main
+          </main>
+        </div>`;
   }
 }
