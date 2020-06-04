@@ -2,6 +2,8 @@ import { LitElement, html, css } from 'lit-element';
 import '@material/mwc-drawer';
 import '@material/mwc-button';
 
+import { PageHome } from './PageHome.js';
+
 export class LitClient extends LitElement {
   static get properties() {
     return {
@@ -58,7 +60,7 @@ export class LitClient extends LitElement {
     return html`
         <div slot="appContent">
           <main class="container">
-            main
+            <page-home></page-home>
           </main>
         </div>`;
   }
