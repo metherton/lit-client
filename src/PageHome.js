@@ -55,12 +55,12 @@ export class PageHome extends LitElement {
             <li>
               <mwc-list-item style="height: 100%;">
                 <article class="container">
-                  <img src="/assets/house.jpeg" alt="Tulips" style="width:100%;">
+                  <img src="/assets/house.jpeg" id="tulips" alt="Tulips" style="width:100%;">
                 </article>
               </mwc-list-item>
             </li>
             <li>
-              <mwc-list-item id="item">Search Etherton family trees</mwc-list-item>
+              <mwc-list-item id="search-family-trees">Search Etherton family trees</mwc-list-item>
             </li>
 
           </mwc-list>
