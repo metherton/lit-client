@@ -3,6 +3,7 @@ import '@material/mwc-drawer';
 import '@material/mwc-button';
 
 import { PageHome } from './PageHome.js';
+import { PageFamilyTrees } from './PageFamilyTrees.js';
 
 export class LitClient extends LitElement {
   static get properties() {
@@ -10,6 +11,11 @@ export class LitClient extends LitElement {
       title: { type: String },
       page: { type: String },
     };
+  }
+
+  constructor() {
+    super();
+    this.page = 'home';
   }
 
   static get styles() {
@@ -58,10 +64,34 @@ export class LitClient extends LitElement {
 
   render() {
     return html`
-        <div slot="appContent">
-          <main class="container">
-            <page-home></page-home>
-          </main>
-        </div>`;
+      <main>
+        ${this._renderPage()}
+      </main>`;
   }
+
+    _renderPage() {
+      switch (this.page) {
+        case 'home':
+          return html`
+            <page-home @navigate=${this.__navigateToPage}></page-home>
+          `;
+        case 'familyTrees':
+          return html`
+            <page-family-trees></page-family-trees>
+          `;
+        default:
+          return html`
+            <p>Page not found try going to <a href="#home">Home</a></p>
+          `;
+      }
+    }
+
+    __navigateToPage(ev) {
+      ev.preventDefault();
+      this.page = ev.detail;
+    }
+
+    __navClass(page) {
+      return classMap({ active: this.page === page });
+    }
 }
